@@ -17,11 +17,10 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
+    movies, similarity = load_data()
    # movies = pickle.load(open("movie_list.pkl", "rb"))
     #similarity = pickle.load(open("similarity.pkl", "rb"))
     #return movies, similarity
-
-movies, similarity = load_data()
 
 # ---------------- CSS ----------------
 
