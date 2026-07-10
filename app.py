@@ -170,14 +170,17 @@ def recommend(movie):
 
     movie_index = movies[movies["title"] == movie].index[0]
 
-    # Get stored Top 5 similar movies
-    movie_list = similarity[movie_index]
+    # Top 5 similarity dictionary
+    if movie_index in similarity:
+        movie_list = similarity[movie_index]
+    else:
+        movie_list = similarity[str(movie_index)]
 
     recommended_movies = []
 
     for i in movie_list:
         recommended_movies.append(
-            movies.iloc[i[0]].title
+            movies.iloc[i[0]]["title"]
         )
 
     return recommended_movies
