@@ -5,11 +5,7 @@ import time
 
 # ---------------- PAGE CONFIG ----------------
 
-import gzip
-
-with gzip.open("similarity.pkl.gz","rb") as f:
-    similarity = pickle.load(f)
-similarity = pickle.load(open("similarity.pkl", "rb"))
+similarity = pickle.load(open("similarity.pkl","rb"))
 
 st.set_page_config(
     page_title="🎬 Movie Recommendation System",
